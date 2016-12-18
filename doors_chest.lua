@@ -548,7 +548,7 @@ minetest.register_node("protector:chest", {
 			.. default.gui_slots
 			.. "list[nodemeta:".. spos .. ";main;0,0.3;8,4;]"
 			.. "button[0,4.5;2,0.25;toup;" .. S("To Chest") .. "]"
-			.. "field[2.3,4.8;4,0.25;chestname;;"
+--			.. "field[2.3,4.8;4,0.25;chestname;;"
 			.. meta:get_string("name") .. "]"
 			.. "button[6,4.5;2,0.25;todn;" .. S("To Inventory") .. "]"
 			.. "list[current_player;main;0,5;8,1;]"
@@ -615,17 +615,17 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 				end
 			end
 
-		elseif fields.chestname then
+--		elseif fields.chestname then
 
 			-- change chest infotext to display name
-			if fields.chestname ~= "" then
+--			if fields.chestname ~= "" then
 
-				meta:set_string("name", fields.chestname)
-				meta:set_string("infotext",
-				S("Protected Chest (@1)", fields.chestname))
-			else
-				meta:set_string("infotext", S("Protected Chest"))
-			end
+--				meta:set_string("name", fields.chestname)
+--				meta:set_string("infotext",
+--				S("Protected Chest (@1)", fields.chestname))
+--			else
+--				meta:set_string("infotext", S("Protected Chest"))
+--			end
 
 		end
 	end
@@ -638,7 +638,7 @@ minetest.register_craft({
 	output = 'protector:chest',
 	recipe = {
 		{'group:wood', 'group:wood', 'group:wood'},
-		{'group:wood', 'default:copper_ingot', 'group:wood'},
+		{'group:wood', '', 'group:wood'},
 		{'group:wood', 'group:wood', 'group:wood'},
 	}
 })

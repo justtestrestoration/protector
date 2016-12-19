@@ -8,6 +8,9 @@ protector.drop = minetest.setting_getbool("protector_drop") or false
 protector.flip = minetest.setting_getbool("protector_flip") or false
 protector.hurt = (tonumber(minetest.setting_get("protector_hurt")) or 0)
 
+-- local mobs variable declared
+local mobs
+
 -- Intllib
 local S
 if minetest.get_modpath("intllib") then
@@ -407,9 +410,9 @@ minetest.register_node("protector:protect", {
 minetest.register_craft({
 	output = "protector:protect",
 	recipe = {
-		{"default:stone", "default:stone", "default:stone"},
-		{"default:stone", "default:steel_ingot", "default:stone"},
-		{"default:stone", "default:stone", "default:stone"},
+		{"paucity:protectmoney", "paucity:protectmoney", "paucity:protectmoney"},
+		{"paucity:protectmoney", "default:steel_ingot", "paucity:protectmoney"},
+		{"paucity:protectmoney", "paucity:protectmoney", "paucity:protectmoney"},
 	}
 })
 
@@ -488,9 +491,9 @@ minetest.register_node("protector:protect2", {
 minetest.register_craft({
 	output = "protector:protect2",
 	recipe = {
-		{"default:stone", "default:stone", "default:stone"},
-		{"default:stone", "default:copper_ingot", "default:stone"},
-		{"default:stone", "default:stone", "default:stone"},
+		{"paucity:protectmoney", "paucity:protectmoney", "paucity:protectmoney"},
+		{"paucity:protectmoney", "default:copper_ingot", "paucity:protectmoney"},
+		{"paucity:protectmoney", "paucity:protectmoney", "paucity:protectmoney"},
 	}
 })
 
